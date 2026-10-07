@@ -40,13 +40,16 @@ export function Field({ label, hint, error, required, className, hideLabel, chil
       value={{ id, describedBy: hasMessage ? messageId : undefined, invalid: Boolean(error), required: Boolean(required) }}
     >
       <div className={cn('flex min-w-0 flex-col gap-1.5', className)}>
-        <label htmlFor={id} className={cn('text-body font-medium text-foreground', hideLabel && 'sr-only')}>
-          {label}
-          {required && (
-            <span className="ml-0.5 text-destructive-subtle-foreground" aria-hidden>
-              *
-            </span>
+        <label
+          htmlFor={id}
+          className={cn(
+            'text-body font-medium text-foreground',
+            // The marker is generated content: the label's text (and so its accessible name) stays the plain label.
+            required && "after:ml-0.5 after:text-destructive-subtle-foreground after:content-['*']",
+            hideLabel && 'sr-only',
           )}
+        >
+          {label}
         </label>
         {children}
         {hasMessage &&

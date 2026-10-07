@@ -1,0 +1,11 @@
+/* VietGara web design system (docs: vietgara-docs/docs/02-Design/v2/03_Design_System.md).
+   The app's entry stylesheet does:
+     @import 'tailwindcss';
+     @import '@vietgara/web-ui/styles.css';
+     @source '../../node_modules/@vietgara/web-ui/src';          */
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import './tokens.css';
+@import './base.css';

@@ -65,7 +65,14 @@ import {
 } from '../src'
 import './gallery.css'
 
-const labels = { menu: 'Menu', close: 'Close', skip: 'Skip to content', navigation: 'Navigation' }
+const labels = {
+  menu: 'Menu',
+  close: 'Close',
+  skip: 'Skip to content',
+  navigation: 'Navigation',
+  collapse: 'Collapse sidebar',
+  expand: 'Expand sidebar',
+}
 
 function Gallery() {
   const [seg, setSeg] = useState<'link' | 'manual'>('link')

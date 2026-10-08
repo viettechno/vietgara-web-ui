@@ -1,5 +1,16 @@
 # vietgara-web-ui
 
+> **Purpose:** This repo is the **web design system library (`@vietgara/web-ui`) shared by the two VietGara web apps**: tokens, themes and React components. It is a library, not an app.
+
+| | |
+| --- | --- |
+| **Type** | TypeScript/React component library (source-only), consumed by git tag |
+| **Used by** | `vietgara-owner-web` and `vietgara-admin-web` |
+| **Does** | Design tokens (light and dark), Tailwind v4 theme, accessible components, app shell, a component gallery and a token contrast test |
+| **Built with** | React, TypeScript, Tailwind CSS v4, Radix UI, Lucide, Motion, cmdk, sonner |
+| **Delivered as** | A release tag `vX.Y.Z` that each web app pins in `package.json` over HTTPS |
+| **Related** | The mobile counterpart of the theme is `vietgara-flutter-core`; the specification is in `vietgara-docs` (`docs/02-Design/v2`) |
+
 The VietGara web design system: design tokens (light and dark), the Tailwind v4 theme and the React components shared by
 [`vietgara-owner-web`](https://github.com/viettechno/vietgara-owner-web) and [`vietgara-admin-web`](https://github.com/viettechno/vietgara-admin-web).
 

@@ -53,6 +53,16 @@ export function Alert({ tone, title, children, action, className }: AlertProps) 
   )
 }
 
+/** Shared reminder shown after sending an e-mail OTP. */
+export function OtpEmailNotice({ locale }: { locale: 'en' | 'vi' }) {
+  const message =
+    locale === 'en'
+      ? "If you don't see the e-mail, check your spam or junk folder."
+      : 'Nếu không thấy email, hãy kiểm tra thư mục thư rác (Spam/Junk).'
+
+  return <Alert tone="info" title={message} />
+}
+
 /** Duotone spot illustrations for empty and error states (decorative). */
 export function Illustration({ kind, className }: { kind: 'list' | 'search' | 'error'; className?: string }) {
   const common = { viewBox: '0 0 120 90', fill: 'none', 'aria-hidden': true, className: cn('h-[90px] w-[120px]', className) } as const

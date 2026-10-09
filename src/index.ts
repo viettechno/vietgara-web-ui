@@ -34,7 +34,7 @@ export {
   DescriptionList,
   StickyActionBar,
 } from './components/Layout'
-export { Skeleton, Spinner, Alert, Illustration, EmptyState } from './components/Feedback'
+export { Skeleton, Spinner, Alert, OtpEmailNotice, Illustration, EmptyState } from './components/Feedback'
 export { Table, TableHead, TableBody, TableRow, TableHeaderCell, TableCell, Pagination } from './components/Table'
 export { StatStrip, Stat, Meter } from './components/Stats'
 export { SegmentedControl } from './components/Segmented'

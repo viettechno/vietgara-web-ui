@@ -2,6 +2,10 @@
 
 Versions are git tags (`vX.Y.Z`), following semantic versioning. Apps pin one in `package.json`.
 
+## Unreleased
+
+- Export `OtpEmailNotice`, a localized shared reminder to check spam/junk folders after requesting an e-mail OTP.
+
 ## v0.2.0 — 2026-10-08
 
 - **Collapsible sidebar.** On desktop the sidebar is expanded (256px) or collapsed to an icon rail (64px) with a toggle at its foot; the choice is remembered (`localStorage` key `vietgara.sidebar`, default expanded). A collapsed sidebar (and the tablet rail) opens over the page, without moving the content, when the mouse rests on it for 150 ms or keyboard focus enters it. `AppShell` labels gain `collapse` and `expand`; new `useSidebarCompact()` for content that a collapsed sidebar hides (the wordmark). The sidebar now sits above the header (z-index 35) so its brand is never clipped.

@@ -5,7 +5,7 @@
 | | |
 | --- | --- |
 | **Type** | TypeScript/React component library (source-only), consumed by git tag |
-| **Used by** | `vietgara-owner-web` and `vietgara-admin-web` |
+| **Used by** | `vietgara-owner-web` and `vietgara-admin-web`; from Release 10.2 the public sites `viettechno-website` and `vietgara-help` take the tokens only (`styles.css`), no components |
 | **Does** | Design tokens (light and dark), Tailwind v4 theme, accessible components, app shell, a component gallery and a token contrast test |
 | **Built with** | React, TypeScript, Tailwind CSS v4, Radix UI, Lucide, Motion, cmdk, sonner |
 | **Delivered as** | A release tag `vX.Y.Z` that each web app pins in `package.json` over HTTPS |

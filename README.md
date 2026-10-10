@@ -62,6 +62,15 @@ npm run typecheck && npm run lint && npm test
 
 To try a change in an app before tagging, sync the source into the app's `node_modules` (or `npm install --install-links ../vietgara-web-ui`).
 
+## Planned components
+
+Per the [Release Plan](https://github.com/viettechno/vietgara-docs/blob/master/docs/01-Product/Release_Plan/Release_Plan_Phase3.md) in `vietgara-docs`; each arrives with the release that needs it:
+
+- a one-time-code and QR input for MFA (Release 6.1);
+- a calendar and grid with drag and drop for bookings and bays (Phase 12);
+- a block canvas for the print template designer (Release 14.2);
+- a confirmation dialog for the delete-or-deactivate outcome (Release 5.0).
+
 ## Change flow
 
 Change the kit → add or update the gallery entry for every state → `npm test` → tag `vX.Y.Z` (semver: MAJOR token or identity change, MINOR new component, PATCH fix) → bump the tag in the apps. See `CHANGELOG.md`.

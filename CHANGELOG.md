@@ -4,6 +4,7 @@ Versions are git tags (`vX.Y.Z`), following semantic versioning. Apps pin one in
 
 ## Unreleased
 
+- Add shared `OtpInput`, `StatusBadge`, form helpers and timing hooks for the VietGara web apps.
 - Export `OtpEmailNotice`, a localized shared reminder to check spam/junk folders after requesting an e-mail OTP.
 
 ## v0.2.0 — 2026-10-08

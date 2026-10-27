@@ -64,12 +64,10 @@ To try a change in an app before tagging, sync the source into the app's `node_m
 
 ## Planned components
 
-Per the [Release Plan](https://github.com/viettechno/vietgara-docs/blob/master/docs/01-Product/Release_Plan/Release_Plan_Phase3.md) in `vietgara-docs`; each arrives with the release that needs it:
+Each arrives with the release that needs it:
 
-- a one-time-code and QR input for MFA (Release 6.1);
 - a calendar and grid with drag and drop for bookings and bays (Phase 12);
-- a block canvas for the print template designer (Release 14.2);
-- a confirmation dialog for the delete-or-deactivate outcome (Release 5.0).
+- a block canvas for the print template designer (Release 14.2).
 
 ## Change flow
 

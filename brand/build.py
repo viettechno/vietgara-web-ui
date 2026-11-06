@@ -80,17 +80,21 @@ for name in ('light', 'dark'):
     rgba, lock, gl = variants[name]
     suffix = '' if name == 'light' else '-dark'
 
-    # Horizontal lockup: the glyph and, beside it, the wordmark cut from the stacked lockup.
-    word = crop(rgba, bbox(rgba.crop((0, int(rgba.height * 0.575), rgba.width, rgba.height))) and
-                (lambda b: (b[0], b[1] + int(rgba.height * 0.575), b[2], b[3] + int(rgba.height * 0.575)))(
-                    bbox(rgba.crop((0, int(rgba.height * 0.575), rgba.width, rgba.height)))), 4)
-    g = fit(gl, height=round(word.height * 1.3))
-    gap = round(word.height * 0.38)
+    # The symbol (V, wrench and the car lines, without the name) and the wordmark, cut from the stacked
+    # lockup; the horizontal lockup is the two side by side.
+    split = int(rgba.height * 0.575)  # the wordmark starts below this row
+    top = rgba.crop((0, 0, rgba.width, split))
+    symbol = crop(top, bbox(top), 4)
+    wb = bbox(rgba.crop((0, split, rgba.width, rgba.height)))
+    word = crop(rgba, (wb[0], wb[1] + split, wb[2], wb[3] + split), 4)
+    g = fit(symbol, height=round(word.height * 1.5))
+    gap = round(word.height * 0.28)
     h = max(g.height, word.height)
     horiz = Image.new('RGBA', (g.width + gap + word.width, h), (0, 0, 0, 0))
     horiz.alpha_composite(g, (0, (h - g.height) // 2))
     horiz.alpha_composite(word, (g.width + gap, (h - word.height) // 2))
     horiz.save(os.path.join(out, f'logo-horizontal{suffix}.png'), optimize=True)
+    symbol.save(os.path.join(out, f'symbol{suffix}.png'), optimize=True)
 
 # App icon: the glyph, in the light colours, on white. Opaque, as the stores require.
 _, _, gl_light = variants['light']
@@ -124,7 +128,7 @@ ico[-1].save(os.path.join(out, 'favicon.ico'), sizes=[(16, 16), (32, 32), (48, 4
 web = os.path.join(out, 'web')
 os.makedirs(web, exist_ok=True)
 for suffix in ('', '-dark'):
-    for stem, kw in (('logo-horizontal', {'height': 96}), ('logo', {'width': 640}), ('mark', {'width': 256})):
+    for stem, kw in (('logo-horizontal', {'height': 96}), ('logo', {'width': 640}), ('symbol', {'width': 320}), ('mark', {'width': 256})):
         fit(Image.open(os.path.join(out, f'{stem}{suffix}.png')), **kw).save(
             os.path.join(web, f'{stem}{suffix}.webp'), quality=85, method=6)
 print('done')

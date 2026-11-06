@@ -2,3 +2,5 @@ node_modules
 dist
 *.log
 .DS_Store
+# the derived brand assets are committed: the other repositories copy them from here
+!brand/dist

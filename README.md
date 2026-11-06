@@ -20,6 +20,7 @@ This repository ships **TypeScript source**; the consuming app's Vite build comp
 | Layer | What |
 | --- | --- |
 | `src/styles/tokens.css` | Semantic color tokens, light on `:root`, dark on `[data-theme='dark']` |
+| `brand/` | The logo masters, the derived assets for sites and apps, and the scripts that build them ([README](brand/README.md)) |
 | `src/styles/base.css` | Tailwind `@theme` (type scale, radius, shadows, motion), base layer, responsive table rule |
 | `src/components` | Buttons, form controls, dialogs and sheets (Radix), table, badges, layout, feedback, shell, theme |
 

@@ -4,6 +4,7 @@ Versions are git tags (`vX.Y.Z`), following semantic versioning. Apps pin one in
 
 ## Unreleased
 
+- Add `brand/`: the VietGara logo masters, the derived web and app assets (`dist/`), and the scripts that build them and write the launcher icons of the Flutter apps. No code change.
 - Add shared `OtpInput`, `StatusBadge`, form helpers and timing hooks for the VietGara web apps.
 - Export `OtpEmailNotice`, a localized shared reminder to check spam/junk folders after requesting an e-mail OTP.
 

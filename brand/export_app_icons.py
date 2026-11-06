@@ -1,7 +1,7 @@
 """Writes the launcher icons and the launch screen of a Flutter app from the assets in dist/.
 
 Run: python3 export_app_icons.py <dist dir> <app dir>
-Android: legacy and adaptive launcher icons (with the themed monochrome layer) and the splash mark.
+Android: legacy and adaptive launcher icons (with the themed monochrome layer) and the splash symbol.
 iOS: every size of AppIcon.appiconset (opaque, as the App Store requires) and the launch image.
 """
 import json, os, re, sys
@@ -13,7 +13,7 @@ LANCZOS = Image.Resampling.LANCZOS
 icon = Image.open(os.path.join(dist, 'icon-1024.png')).convert('RGB')
 foreground = Image.open(os.path.join(dist, 'icon-foreground-1024.png'))
 monochrome = Image.open(os.path.join(dist, 'icon-monochrome-1024.png'))
-mark = Image.open(os.path.join(dist, 'mark.png'))
+mark = Image.open(os.path.join(dist, 'symbol.png'))  # the splash shows the symbol, with the car lines
 
 def save(im, path, size=None):
     os.makedirs(os.path.dirname(path), exist_ok=True)

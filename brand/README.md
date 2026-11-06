@@ -14,9 +14,9 @@ The logo of VietGara: a **V** that is also a wrench, over the outline of a car, 
 | `logo.png`, `logo-dark.png` | The stacked lockup, transparent, for light and for dark backgrounds. Splash and sign-in screens, social images, print |
 | `logo-horizontal.png`, `logo-horizontal-dark.png` | The symbol (V, wrench and the car lines) and the wordmark side by side. App bars, sidebars and site headers. **Derived**: the masters only have the stacked form |
 | `symbol.png`, `symbol-dark.png` | The symbol alone, with the car lines, where the name is already written (next to a title) |
-| `mark.png`, `mark-dark.png` | The V and wrench only, without the car lines: for sizes where the thin lines would vanish (collapsed sidebars, avatars, favicons, app icons) |
-| `icon-1024.png` | The app icon: the glyph on white, opaque (App Store, Play Store) |
-| `icon-foreground-1024.png`, `icon-monochrome-1024.png` | Android adaptive icon layers (the glyph in the 66 % safe zone) and the themed-icon layer |
+| `mark.png`, `mark-dark.png` | The V and wrench only, without the car lines: for sizes where the thin lines would vanish (collapsed sidebars, avatars, favicons and the web touch icons) |
+| `icon-1024.png` | The app icon: the symbol (with the car lines) on white, opaque (App Store, Play Store) |
+| `icon-foreground-1024.png`, `icon-monochrome-1024.png` | Android adaptive icon layers (the symbol in the 66 % safe zone) and the themed-icon layer |
 | `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Web icons on white (iOS home screen, PWA manifest) |
 | `favicon.ico`, `favicon-16/32/48.png` | The glyph on transparent, for browser tabs |
 | `web/*.webp` | The lockups and the glyph at the size sites show them (the full files are for apps and print) |

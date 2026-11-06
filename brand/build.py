@@ -76,6 +76,7 @@ def fit(im, height=None, width=None):
     return im.resize((width, round(im.height * width / im.width)), Image.Resampling.LANCZOS)
 
 WHITE = (255, 255, 255, 255)
+symbols = {}
 for name in ('light', 'dark'):
     rgba, lock, gl = variants[name]
     suffix = '' if name == 'light' else '-dark'
@@ -95,32 +96,35 @@ for name in ('light', 'dark'):
     horiz.alpha_composite(word, (g.width + gap, (h - word.height) // 2))
     horiz.save(os.path.join(out, f'logo-horizontal{suffix}.png'), optimize=True)
     symbol.save(os.path.join(out, f'symbol{suffix}.png'), optimize=True)
+    symbols[name] = symbol
 
-# App icon: the glyph, in the light colours, on white. Opaque, as the stores require.
-_, _, gl_light = variants['light']
-def icon_canvas(size, glyph_share, bg=WHITE):
+# App icon: the symbol (V, wrench and car lines), in the light colours, on white. Opaque, as the
+# stores require. The symbol is wide, so it spans most of the width.
+symbol_light = symbols['light']
+def icon_canvas(size, symbol_share, bg=WHITE, art=None):
     c = Image.new('RGBA', (size, size), bg)
-    g = fit(gl_light, width=round(size * glyph_share))
+    g = fit(art or symbol_light, width=round(size * symbol_share))
     paste_center(c, g, size / 2, size / 2)
     return c
 
-icon_canvas(1024, 0.66).convert('RGB').save(os.path.join(out, 'icon-1024.png'), optimize=True)
-# Android adaptive icon: transparent glyph inside the 66 % safe zone of the 108 dp layer
-fg = icon_canvas(1024, 0.46, bg=(0, 0, 0, 0))
+icon_canvas(1024, 0.84).convert('RGB').save(os.path.join(out, 'icon-1024.png'), optimize=True)
+# Android adaptive icon: transparent symbol inside the 66 % safe zone of the 108 dp layer
+fg = icon_canvas(1024, 0.60, bg=(0, 0, 0, 0))
 fg.save(os.path.join(out, 'icon-foreground-1024.png'), optimize=True)
-# monochrome (themed icons): the glyph's alpha in a single colour
+# monochrome (themed icons): the symbol's alpha in a single colour
 mono = Image.new('RGBA', fg.size, (0, 0, 0, 0))
 mono.putalpha(fg.getchannel('A'))
 mono.save(os.path.join(out, 'icon-monochrome-1024.png'), optimize=True)
 
+gl_light = variants['light'][2]
 # Web icons: the glyph large in the square (a favicon is tiny), transparent; the touch icon on white
 for size in (16, 32, 48):
     fav = Image.new('RGBA', (size, size), (0, 0, 0, 0))
     paste_center(fav, fit(gl_light, width=size), size / 2, size / 2)
     fav.save(os.path.join(out, f'favicon-{size}.png'), optimize=True)
-icon_canvas(180, 0.70).convert('RGB').save(os.path.join(out, 'apple-touch-icon.png'), optimize=True)
-icon_canvas(192, 0.70).convert('RGB').save(os.path.join(out, 'icon-192.png'), optimize=True)
-icon_canvas(512, 0.70).convert('RGB').save(os.path.join(out, 'icon-512.png'), optimize=True)
+icon_canvas(180, 0.70, art=gl_light).convert('RGB').save(os.path.join(out, 'apple-touch-icon.png'), optimize=True)
+icon_canvas(192, 0.70, art=gl_light).convert('RGB').save(os.path.join(out, 'icon-192.png'), optimize=True)
+icon_canvas(512, 0.70, art=gl_light).convert('RGB').save(os.path.join(out, 'icon-512.png'), optimize=True)
 ico = [Image.open(os.path.join(out, f'favicon-{s}.png')) for s in (16, 32, 48)]
 ico[-1].save(os.path.join(out, 'favicon.ico'), sizes=[(16, 16), (32, 32), (48, 48)], append_images=ico[:-1])
 

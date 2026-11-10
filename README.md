@@ -67,8 +67,8 @@ To try a change in an app before tagging, sync the source into the app's `node_m
 
 Each arrives with the release that needs it:
 
-- a calendar and grid with drag and drop for bookings and bays (Phase 12);
-- a block canvas for the print template designer (Release 14.2).
+- a calendar and grid with drag and drop for bookings and bays (Phase 14);
+- a block canvas for the print template designer (Release 13.2).
 
 ## Change flow
 

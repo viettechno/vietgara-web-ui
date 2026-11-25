@@ -50,7 +50,7 @@
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "globals": "latest",
-    "jsdom": "^29.1.1",
+    "jsdom": "^31.0.1",
     "prettier": "^3.10.1",
     "react": "latest",
     "react-dom": "latest",

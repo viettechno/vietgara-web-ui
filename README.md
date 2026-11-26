@@ -9,12 +9,12 @@
 | **Does** | Design tokens (light and dark), Tailwind v4 theme, accessible components, app shell, a component gallery and a token contrast test |
 | **Built with** | React, TypeScript, Tailwind CSS v4, Radix UI, Lucide, Motion, cmdk, sonner |
 | **Delivered as** | A release tag `vX.Y.Z` that each web app pins in `package.json` over HTTPS |
-| **Related** | The mobile counterpart of the theme is `vietgara-flutter-core`; the specification is in `vietgara-docs` (`docs/02-Design/v2`) |
+| **Related** | The mobile counterpart of the theme is `vietgara-flutter-core`; the specification is in `vietgara-docs` (`docs/en/02-Design/v2`) |
 
 The VietGara web design system: design tokens (light and dark), the Tailwind v4 theme and the React components shared by
 [`vietgara-owner-web`](https://github.com/viettechno/vietgara-owner-web) and [`vietgara-admin-web`](https://github.com/viettechno/vietgara-admin-web).
 
-The specification is in vietgara-docs: [`docs/02-Design/v2/03_Design_System.md`](https://github.com/viettechno/vietgara-docs/blob/master/docs/02-Design/v2/03_Design_System.md).
+The specification is in vietgara-docs: [`docs/en/02-Design/v2/03_Design_System.md`](https://github.com/viettechno/vietgara-docs/blob/master/docs/en/02-Design/v2/03_Design_System.md).
 This repository ships **TypeScript source**; the consuming app's Vite build compiles it, like `vietgara_core` for the Flutter apps.
 
 | Layer | What |
